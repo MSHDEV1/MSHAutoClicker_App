@@ -1,0 +1,32 @@
+﻿<Window x:Name="windows1" x:Class="autoclickermsh.MainWindow"
+        xmlns:nh="clr-namespace:NHotkey.Wpf;assembly=NHotkey.Wpf"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:autoclickermsh"
+        mc:Ignorable="d"
+        Focusable="True"
+    Title="MSHAutoClicker" Height="452" Width="410" Topmost="True"  PreviewKeyDown="windows1_PreviewKeyDown" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" >
+    <Window.InputBindings>
+        <!-- This shortcut executes even if the window is minimized or out of focus -->
+        <KeyBinding Gesture="Ctrl+X" Command ="{Binding opencloseCommand}" nh:HotkeyManager.RegisterGlobalHotkey="True" />
+        <KeyBinding Gesture="Ctrl+V" Command ="{Binding opencloseleftCommand}" nh:HotkeyManager.RegisterGlobalHotkey="True" />
+    </Window.InputBindings>
+    <Grid x:Name="grid" Margin="-332,-70,-807,0" Loaded="Grid_Loaded" Height="910" VerticalAlignment="Top" Focusable="True">
+
+        <Button x:Name="clicker" Content="Başlat(Shift+X)(MOUSE5)" HorizontalAlignment="Left" Margin="360,202,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.606,0.714" Width="150" Click="clicker_Click" Height="40"/>
+        <Button x:Name="clicker_false" Content="Durdur" HorizontalAlignment="Left" Margin="360,272,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.613,0.6" Width="150" Click="clicker_false_Click" Height="40"/>
+        <Button x:Name="leftclick" Content="Başlat(Shift+V)(MOUSE6)" HorizontalAlignment="Left" Margin="582,202,0,0" VerticalAlignment="Top" Height="40" Width="144" Click="leftclick_Click"/>
+        <Button x:Name="leftclick_false" Content="Durdur" HorizontalAlignment="Left" Margin="582,272,0,0" VerticalAlignment="Top" Height="40" Width="144" Click="leftclick_false_Click"/>
+        <Label Content="Sol Mouse " HorizontalAlignment="Left" Margin="378,154,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.184,0.56" Width="114" FontSize="22"/>
+        <Label Content="Sağ Mouse " HorizontalAlignment="Left" Margin="591,154,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.184,0.56" Width="126" FontSize="22"/>
+        <TextBox x:Name="solhız" HorizontalAlignment="Left" Margin="374,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" Height="22" Text="50"/>
+        <TextBox x:Name="saghız" HorizontalAlignment="Left" Margin="594,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" Text="50"/>
+        <Label Content="Sol Mouse Tıklama Hızı" HorizontalAlignment="Left" Margin="360,346,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.184,0.56" Width="150" FontSize="14"/>
+        <Label Content="Sağ Mouse Tıklama Hızı" HorizontalAlignment="Left" Margin="572,346,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.184,0.56" Width="164" FontSize="14"/>
+        <Button x:Name="kuc" Content="-" HorizontalAlignment="Left" Margin="674,73,0,0" VerticalAlignment="Top" Width="33" FontSize="18" Click="kuc_Click" RenderTransformOrigin="0.439,0.429"/>
+        <Button x:Name="kapat" Content="X" HorizontalAlignment="Left" Margin="712,73,0,0" VerticalAlignment="Top" Width="24" FontSize="18" Click="kapat_Click" RenderTransformOrigin="-1.646,0.644"/>
+
+    </Grid>
+</Window>
